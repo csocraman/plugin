@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://l8fr6hpvoxwl"]
 
-[ext_resource type="Script" path="res://addons/plugin-bd99e7939cd9b80506f68002e3e62de2ac73d34c/note.gd" id="1_q5njl"]
-[ext_resource type="FontFile" uid="uid://irojfre76ihl" path="res://addons/plugin-bd99e7939cd9b80506f68002e3e62de2ac73d34c/CONSOLA.TTF" id="2_r2m5p"]
+[ext_resource type="Script" path="res://addons/plugin-a5612bdb856e9b60a37c0c4c75ecabc58eba8cf1/simplenote.gd" id="1_fqlww"]
+[ext_resource type="FontFile" uid="uid://irojfre76ihl" path="res://addons/plugin-a5612bdb856e9b60a37c0c4c75ecabc58eba8cf1/CONSOLA.TTF" id="2_egb2l"]
 
 [sub_resource type="InputEventKey" id="InputEventKey_e8xqj"]
 device = -1
@@ -33,7 +33,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource("1_q5njl")
+script = ExtResource("1_fqlww")
 
 [node name="Control" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -91,7 +91,7 @@ layout_mode = 2
 
 [node name="LineEdit" type="LineEdit" parent="Control"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_r2m5p")
+theme_override_fonts/font = ExtResource("2_egb2l")
 placeholder_text = "title.."
 alignment = 1
 
@@ -113,7 +113,7 @@ theme_override_constants/margin_bottom = 10
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/background_color = Color(0.0470588, 0.0588235, 0.0745098, 1)
-theme_override_fonts/font = ExtResource("2_r2m5p")
+theme_override_fonts/font = ExtResource("2_egb2l")
 placeholder_text = "note..."
 syntax_highlighter = SubResource("CodeHighlighter_dtqsk")
 
@@ -121,5 +121,5 @@ syntax_highlighter = SubResource("CodeHighlighter_dtqsk")
 [connection signal="pressed" from="Control/HBoxContainer/Button2" to="." method="_on_button_2_pressed"]
 [connection signal="file_selected" from="Control/HBoxContainer/Button2/FileDialog" to="." method="_on_file_dialog_file_selected"]
 [connection signal="pressed" from="Control/HBoxContainer/Button3" to="." method="_on_button_3_pressed"]
-[connection signal="file_selected" from="Control/HBoxContainer/Button3/FileDialog2" to="." method="_on_file2_dialog_file_selected"]
 [connection signal="file_selected" from="Control/HBoxContainer/Button3/FileDialog2" to="." method="_on_file_dialog_2_file_selected"]
+[connection signal="file_selected" from="Control/HBoxContainer/Button3/FileDialog2" to="." method="_on_file2_dialog_file_selected"]
