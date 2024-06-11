@@ -1,7 +1,7 @@
 @tool
 extends EditorPlugin
 
-var note = preload("res://note.tscn")
+var note = preload("note.tscn")
 var noteins
 
 func _enter_tree():
@@ -10,7 +10,7 @@ func _enter_tree():
 	_make_visible(false)
 	
 func _get_plugin_icon():
-	return preload("res://addons/simplenote/Frame 1icon.svg")
+	return preload("Frame 1icon.svg")
 
 func _get_plugin_name():
 	return "simple note"
