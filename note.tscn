@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://l8fr6hpvoxwl"]
 
-[ext_resource type="Script" path="res://addons/plugin-a5612bdb856e9b60a37c0c4c75ecabc58eba8cf1/simplenote.gd" id="1_fqlww"]
+[ext_resource type="Script" path="simplenote.gd" id="1_fqlww"]
 [ext_resource type="FontFile" uid="uid://irojfre76ihl" path="res://addons/plugin-a5612bdb856e9b60a37c0c4c75ecabc58eba8cf1/CONSOLA.TTF" id="2_egb2l"]
 
 [sub_resource type="InputEventKey" id="InputEventKey_e8xqj"]
