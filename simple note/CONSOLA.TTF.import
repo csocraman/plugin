@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://irojfre76ihl"
-path="res://.godot/imported/CONSOLA.TTF-e381e831da9fd55083142695df5a258c.fontdata"
+path="res://.godot/imported/CONSOLA.TTF-0434f90c86f59c1741f2c3cfdffd9e97.fontdata"
 
 [deps]
 
-source_file="res://addons/plugin-64ce3f5359cd8925df996f0d1f0ff08e19c9b8fb/CONSOLA.TTF"
-dest_files=["res://.godot/imported/CONSOLA.TTF-e381e831da9fd55083142695df5a258c.fontdata"]
+source_file="res://addons/simple note/CONSOLA.TTF"
+dest_files=["res://.godot/imported/CONSOLA.TTF-0434f90c86f59c1741f2c3cfdffd9e97.fontdata"]
 
 [params]
 
