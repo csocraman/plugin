@@ -1,7 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://l8fr6hpvoxwl"]
+[gd_scene load_steps=7 format=3 uid="uid://c65ekv85k3d6v"]
 
-[ext_resource type="Script" path="simplenote.gd" id="1_fqlww"]
-[ext_resource type="FontFile" uid="uid://irojfre76ihl" path="res://addons/plugin-a5612bdb856e9b60a37c0c4c75ecabc58eba8cf1/CONSOLA.TTF" id="2_egb2l"]
+[ext_resource type="Script" path="res://addons/plugin-64ce3f5359cd8925df996f0d1f0ff08e19c9b8fb/note.gd" id="1_s6wh5"]
+[ext_resource type="FontFile" uid="uid://irojfre76ihl" path="res://addons/plugin-64ce3f5359cd8925df996f0d1f0ff08e19c9b8fb/CONSOLA.TTF" id="2_8pk1o"]
 
 [sub_resource type="InputEventKey" id="InputEventKey_e8xqj"]
 device = -1
@@ -33,7 +33,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource("1_fqlww")
+script = ExtResource("1_s6wh5")
 
 [node name="Control" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -91,7 +91,7 @@ layout_mode = 2
 
 [node name="LineEdit" type="LineEdit" parent="Control"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_egb2l")
+theme_override_fonts/font = ExtResource("2_8pk1o")
 placeholder_text = "title.."
 alignment = 1
 
@@ -113,7 +113,7 @@ theme_override_constants/margin_bottom = 10
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/background_color = Color(0.0470588, 0.0588235, 0.0745098, 1)
-theme_override_fonts/font = ExtResource("2_egb2l")
+theme_override_fonts/font = ExtResource("2_8pk1o")
 placeholder_text = "note..."
 syntax_highlighter = SubResource("CodeHighlighter_dtqsk")
 
