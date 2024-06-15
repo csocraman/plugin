@@ -16,10 +16,13 @@ events = [SubResource("InputEventKey_e8xqj")]
 bg_color = Color(0.0470588, 0.0588235, 0.0745098, 1)
 
 [sub_resource type="CodeHighlighter" id="CodeHighlighter_dtqsk"]
-number_color = Color(1, 0.490196, 0, 1)
+number_color = Color(0.643137, 0.643137, 0.65098, 1)
 symbol_color = Color(0.643137, 0.643137, 0.65098, 1)
 function_color = Color(0.643137, 0.643137, 0.65098, 1)
 member_variable_color = Color(0.643137, 0.643137, 0.65098, 1)
+color_regions = {
+"( )": Color(0.737255, 1, 0, 1)
+}
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -92,7 +95,7 @@ layout_mode = 2
 layout_mode = 2
 text = "              view              "
 flat = false
-item_count = 13
+item_count = 12
 popup/item_0/text = "symbols"
 popup/item_0/id = 0
 popup/item_0/separator = true
@@ -124,15 +127,12 @@ popup/item_9/text = "numbers"
 popup/item_9/id = 9
 popup/item_9/disabled = true
 popup/item_9/separator = true
-popup/item_10/text = "numbers color"
+popup/item_10/text = "numbers"
 popup/item_10/checkable = 1
 popup/item_10/id = 10
-popup/item_11/text = ""
+popup/item_11/text = "In the future I will add the function of adding custom colors"
 popup/item_11/id = 11
-popup/item_11/separator = true
-popup/item_12/text = "In the future I will add the function of adding custom colors"
-popup/item_12/id = 12
-popup/item_12/disabled = true
+popup/item_11/disabled = true
 
 [node name="HSeparator" type="HSeparator" parent="Control"]
 layout_mode = 2
@@ -166,11 +166,11 @@ syntax_highlighter = SubResource("CodeHighlighter_dtqsk")
 
 [node name="SAVED" type="Label" parent="."]
 visible = false
-layout_mode = 0
+layout_mode = 2
 offset_left = 700.0
-offset_top = 40.0
-offset_right = 720.0
-offset_bottom = 60.0
+offset_top = 45.0
+offset_right = 1420.0
+offset_bottom = 65.0
 size_flags_vertical = 8
 theme_override_font_sizes/font_size = 14
 text = "(*)"

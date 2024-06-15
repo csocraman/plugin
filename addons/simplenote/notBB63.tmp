@@ -16,10 +16,13 @@ events = [SubResource("InputEventKey_e8xqj")]
 bg_color = Color(0.0470588, 0.0588235, 0.0745098, 1)
 
 [sub_resource type="CodeHighlighter" id="CodeHighlighter_dtqsk"]
-number_color = Color(1, 0.490196, 0, 1)
+number_color = Color(0.643137, 0.643137, 0.65098, 1)
 symbol_color = Color(0.643137, 0.643137, 0.65098, 1)
 function_color = Color(0.643137, 0.643137, 0.65098, 1)
 member_variable_color = Color(0.643137, 0.643137, 0.65098, 1)
+color_regions = {
+"( )": Color(0.737255, 1, 0, 1)
+}
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -92,47 +95,14 @@ layout_mode = 2
 layout_mode = 2
 text = "              view              "
 flat = false
-item_count = 13
-popup/item_0/text = "symbols"
+item_count = 2
+popup/item_0/text = "Parentheses color"
+popup/item_0/checkable = 1
 popup/item_0/id = 0
 popup/item_0/separator = true
-popup/item_1/text = "Parentheses color"
+popup/item_1/text = "quotation marks color"
 popup/item_1/checkable = 1
 popup/item_1/id = 1
-popup/item_2/text = "Quotation marks color"
-popup/item_2/checkable = 1
-popup/item_2/id = 2
-popup/item_3/text = "Braces color"
-popup/item_3/checkable = 1
-popup/item_3/id = 3
-popup/item_4/text = "brackets color "
-popup/item_4/checkable = 1
-popup/item_4/id = 4
-popup/item_5/text = "whitespace"
-popup/item_5/id = 5
-popup/item_5/separator = true
-popup/item_6/text = "Tab visible"
-popup/item_6/checkable = 1
-popup/item_6/id = 6
-popup/item_7/text = "Control chars visible"
-popup/item_7/checkable = 1
-popup/item_7/id = 7
-popup/item_8/text = "Speces visible"
-popup/item_8/checkable = 1
-popup/item_8/id = 8
-popup/item_9/text = "numbers"
-popup/item_9/id = 9
-popup/item_9/disabled = true
-popup/item_9/separator = true
-popup/item_10/text = "numbers color"
-popup/item_10/checkable = 1
-popup/item_10/id = 10
-popup/item_11/text = ""
-popup/item_11/id = 11
-popup/item_11/separator = true
-popup/item_12/text = "In the future I will add the function of adding custom colors"
-popup/item_12/id = 12
-popup/item_12/disabled = true
 
 [node name="HSeparator" type="HSeparator" parent="Control"]
 layout_mode = 2
@@ -160,17 +130,18 @@ theme_override_constants/margin_bottom = 10
 [node name="TextEdit" type="TextEdit" parent="Control/PanelContainer/MarginContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_colors/background_color = Color(0.0470588, 0.0588235, 0.0745098, 1)
 theme_override_fonts/font = ExtResource("2_l2s4e")
 placeholder_text = "note..."
 syntax_highlighter = SubResource("CodeHighlighter_dtqsk")
 
 [node name="SAVED" type="Label" parent="."]
 visible = false
-layout_mode = 0
+layout_mode = 2
 offset_left = 700.0
-offset_top = 40.0
-offset_right = 720.0
-offset_bottom = 60.0
+offset_top = 45.0
+offset_right = 1420.0
+offset_bottom = 65.0
 size_flags_vertical = 8
 theme_override_font_sizes/font_size = 14
 text = "(*)"
@@ -181,5 +152,6 @@ vertical_alignment = 2
 [connection signal="file_selected" from="Control/HBoxContainer/Button2/FileDialog" to="." method="_on_file_dialog_file_selected"]
 [connection signal="pressed" from="Control/HBoxContainer/Button3" to="." method="_on_button_3_pressed"]
 [connection signal="file_selected" from="Control/HBoxContainer/Button3/FileDialog2" to="." method="_on_file_dialog_2_file_selected"]
+[connection signal="file_selected" from="Control/HBoxContainer/Button3/FileDialog2" to="." method="_on_file2_dialog_file_selected"]
 [connection signal="text_changed" from="Control/LineEdit" to="." method="_on_line_edit_text_changed"]
 [connection signal="text_changed" from="Control/PanelContainer/MarginContainer/TextEdit" to="." method="_on_text_edit_text_changed"]
