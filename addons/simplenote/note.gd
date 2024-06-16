@@ -124,7 +124,7 @@ func viewf(id):
 		if view.get_popup().is_item_checked(4):
 			$Control/PanelContainer/MarginContainer/TextEdit.syntax_highlighter.add_color_region("[","]",Color8(255,0,0))
 		else:
-			$Control/PanelContainer/MarginContainer/TextEdit.syntax_highlighter.remove_color_region("[]")
+			$Control/PanelContainer/MarginContainer/TextEdit.syntax_highlighter.remove_color_region("[")
 	if id == 6:
 		view.get_popup().set_item_checked(id,bool((int(view.get_popup().is_item_checked(6)) - 1) * -1))
 		if view.get_popup().is_item_checked(6):
