@@ -15,16 +15,19 @@ func _process(delta):
 	$SAVED.position.x = $".".size.x - 20
 
 func save(path, ctni : bool = true):
-	var save
-	if ctni:
-		save = {"title" : $Control/LineEdit.text,"note" : $Control/PanelContainer/MarginContainer/TextEdit.text}
-	elif !ctni:
-		save = {"title" : "","note" : ""}
-	var json = JSON.stringify(save)
-	var file = FileAccess.open(path,FileAccess.WRITE)
-	file.store_line(json)
-	file.close()
-			
+	if FileAccess.file_exists(path) or path != "":
+		var save
+		if ctni:
+			save = {"title" : $Control/LineEdit.text,"note" : $Control/PanelContainer/MarginContainer/TextEdit.text}
+		elif !ctni:
+			save = {"title" : "","note" : ""}
+		var json = JSON.stringify(save)
+		var file = FileAccess.open(path,FileAccess.WRITE)
+		file.store_line(json)
+		file.close()
+	else:
+		$Control/HBoxContainer/Button2/FileDialog.visible = true	
+	
 func load_file(path, ltl : bool = true):
 	if !FileAccess.file_exists(path):
 		return
@@ -48,20 +51,21 @@ func load_file(path, ltl : bool = true):
 
 func _on_button_pressed():
 	save(current_dir)
-	$SAVED.visible = false
-	var notefier = PanelContainer.new()
-	var text = Label.new()
-	text.text = "saved!"
-	text.add_theme_font_size_override("font_size",20)
-	notefier.add_child(text)
-	notefier.size_flags_horizontal = Control.SIZE_SHRINK_BEGIN
-	notefier.position.y = $".".size.y
-		
-	var tween = create_tween().set_ease(Tween.EASE_IN)
-	tween.tween_property(notefier,"position",	Vector2(notefier.position.x,notefier.position.y - 200),0.5)
-	add_child(notefier)
-	await get_tree().create_timer(0.5).timeout
-	notefier.queue_free()	
+	if FileAccess.file_exists(current_dir):
+		$SAVED.visible = false
+		var notefier = PanelContainer.new()
+		var text = Label.new()
+		text.text = "saved!"
+		text.add_theme_font_size_override("font_size",20)
+		notefier.add_child(text)
+		notefier.size_flags_horizontal = Control.SIZE_SHRINK_BEGIN
+		notefier.position.y = $".".size.y
+			
+		var tween = create_tween().set_ease(Tween.EASE_IN)
+		tween.tween_property(notefier,"position",	Vector2(notefier.position.x,notefier.position.y - 200),0.5)
+		add_child(notefier)
+		await get_tree().create_timer(0.5).timeout
+		notefier.queue_free()	
 		
 
 
@@ -134,18 +138,12 @@ func viewf(id):
 	if id == 7:
 		view.get_popup().set_item_checked(id,bool((int(view.get_popup().is_item_checked(7)) - 1) * -1))
 		if view.get_popup().is_item_checked(7):
-			$Control/PanelContainer/MarginContainer/TextEdit.draw_control_chars = true
-		else:
-			$Control/PanelContainer/MarginContainer/TextEdit.draw_control_chars = false
-	if id == 8:
-		view.get_popup().set_item_checked(id,bool((int(view.get_popup().is_item_checked(8)) - 1) * -1))
-		if view.get_popup().is_item_checked(8):
 			$Control/PanelContainer/MarginContainer/TextEdit.draw_spaces = true
 		else:
 			$Control/PanelContainer/MarginContainer/TextEdit.draw_spaces = false
-	if id == 10:
-		view.get_popup().set_item_checked(id,bool((int(view.get_popup().is_item_checked(10)) - 1) * -1))
-		if view.get_popup().is_item_checked(10):
+	if id == 9:
+		view.get_popup().set_item_checked(id,bool((int(view.get_popup().is_item_checked(9)) - 1) * -1))
+		if view.get_popup().is_item_checked(9):
 			$Control/PanelContainer/MarginContainer/TextEdit.syntax_highlighter.number_color = Color8(255,125,0)
 		else:
 			$Control/PanelContainer/MarginContainer/TextEdit.syntax_highlighter.number_color = Color8(164,164,166)
