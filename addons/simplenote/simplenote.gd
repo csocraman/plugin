@@ -8,6 +8,7 @@ var noteinsdock
 var noteinsbottompanel
 var eposbp = 1
 
+
 func _enter_tree():
 	noteins = note.instantiate()
 	noteinsdock = note.instantiate()

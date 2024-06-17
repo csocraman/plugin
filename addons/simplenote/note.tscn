@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://l8fr6hpvoxwl"]
+[gd_scene load_steps=6 format=3 uid="uid://l8fr6hpvoxwl"]
 
 [ext_resource type="Script" path="res://addons/simplenote/note.gd" id="1_ub5lb"]
 [ext_resource type="FontFile" uid="uid://irojfre76ihl" path="res://addons/simplenote/CONSOLA.TTF" id="2_l2s4e"]
@@ -11,9 +11,6 @@ unicode = 115
 
 [sub_resource type="Shortcut" id="Shortcut_jui3j"]
 events = [SubResource("InputEventKey_e8xqj")]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_32ihn"]
-bg_color = Color(0.0470588, 0.0588235, 0.0745098, 1)
 
 [sub_resource type="CodeHighlighter" id="CodeHighlighter_dtqsk"]
 number_color = Color(0.643137, 0.643137, 0.65098, 1)
@@ -36,7 +33,6 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_ub5lb")
-epositionbp = null
 
 [node name="Control" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -159,7 +155,6 @@ alignment = 1
 [node name="PanelContainer" type="PanelContainer" parent="Control"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_32ihn")
 
 [node name="MarginContainer" type="MarginContainer" parent="Control/PanelContainer"]
 layout_mode = 2

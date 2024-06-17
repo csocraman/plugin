@@ -10,7 +10,6 @@ var current_dir = ""
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-
 	var file3 = FileAccess.open("res://addons/simplenote/log.txt",FileAccess.READ)
 	load_file(file3.get_line(),false)
 	view.get_popup().id_pressed.connect(viewf) 	
