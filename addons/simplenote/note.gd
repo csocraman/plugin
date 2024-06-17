@@ -5,8 +5,12 @@ var current_dir = ""
 
 @onready var view = $Control/HBoxContainer/MenuButton
 
+@export var eposition : int = 1
+@export var epositionbp : int = 1
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
+
 	var file3 = FileAccess.open("res://addons/simplenote/log.txt",FileAccess.READ)
 	load_file(file3.get_line(),false)
 	view.get_popup().id_pressed.connect(viewf) 	
@@ -147,4 +151,9 @@ func viewf(id):
 			$Control/PanelContainer/MarginContainer/TextEdit.syntax_highlighter.number_color = Color8(255,125,0)
 		else:
 			$Control/PanelContainer/MarginContainer/TextEdit.syntax_highlighter.number_color = Color8(164,164,166)
-			
+	if id == 11:
+		view.get_popup().set_item_checked(id,bool((int(view.get_popup().is_item_checked(11) ) - 1) * -1))
+		eposition = int(view.get_popup().is_item_checked(11)) + 1
+	if id == 12:
+		view.get_popup().set_item_checked(id,bool((int(view.get_popup().is_item_checked(12) ) - 1) * -1))
+		epositionbp = int(view.get_popup().is_item_checked(12)) + 1

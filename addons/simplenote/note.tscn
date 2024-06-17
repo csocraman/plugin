@@ -16,19 +16,17 @@ events = [SubResource("InputEventKey_e8xqj")]
 bg_color = Color(0.0470588, 0.0588235, 0.0745098, 1)
 
 [sub_resource type="CodeHighlighter" id="CodeHighlighter_dtqsk"]
-number_color = Color(1, 0.490196, 0, 1)
+number_color = Color(0.643137, 0.643137, 0.65098, 1)
 symbol_color = Color(0.643137, 0.643137, 0.65098, 1)
 function_color = Color(0.643137, 0.643137, 0.65098, 1)
 member_variable_color = Color(0.643137, 0.643137, 0.65098, 1)
 color_regions = {
 "\" \"": Color(1, 1, 0, 1),
 "' '": Color(1, 1, 0, 1),
-"( )": Color(0.737255, 1, 0, 1),
-"[ ]": Color(1, 0, 0, 1),
 "{ }": Color(0, 0.686275, 1, 1)
 }
 
-[node name="Control" type="Control"]
+[node name="Simplenote" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -38,6 +36,7 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_ub5lb")
+epositionbp = null
 
 [node name="Control" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -65,7 +64,6 @@ layout_mode = 2
 [node name="Button2" type="Button" parent="Control/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-shortcut = SubResource("Shortcut_jui3j")
 text = "load"
 
 [node name="FileDialog" type="FileDialog" parent="Control/HBoxContainer/Button2"]
@@ -97,9 +95,11 @@ layout_mode = 2
 
 [node name="MenuButton" type="MenuButton" parent="Control/HBoxContainer"]
 layout_mode = 2
-text = "              view              "
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.29
+text = "view"
 flat = false
-item_count = 12
+item_count = 15
 popup/item_0/text = "symbols"
 popup/item_0/id = 0
 popup/item_0/separator = true
@@ -131,12 +131,21 @@ popup/item_8/separator = true
 popup/item_9/text = "numbers color"
 popup/item_9/checkable = 1
 popup/item_9/id = 9
-popup/item_10/text = ""
+popup/item_10/text = "move"
 popup/item_10/id = 10
 popup/item_10/separator = true
-popup/item_11/text = "In the future I will add the function of adding custom colors"
+popup/item_11/text = "move to docks"
+popup/item_11/checkable = 1
 popup/item_11/id = 11
-popup/item_11/disabled = true
+popup/item_12/text = "add to bottom docks"
+popup/item_12/checkable = 1
+popup/item_12/id = 12
+popup/item_13/text = ""
+popup/item_13/id = 13
+popup/item_13/separator = true
+popup/item_14/text = "In the future I will add the function of adding custom colors"
+popup/item_14/id = 14
+popup/item_14/disabled = true
 
 [node name="HSeparator" type="HSeparator" parent="Control"]
 layout_mode = 2
@@ -165,6 +174,8 @@ theme_override_constants/margin_bottom = 10
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("2_l2s4e")
+text = "
+"
 placeholder_text = "note..."
 syntax_highlighter = SubResource("CodeHighlighter_dtqsk")
 
