@@ -148,7 +148,6 @@ layout_mode = 2
 [node name="LineEdit" type="LineEdit" parent="Control"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_l2s4e")
-text = "ideias pro jogo"
 placeholder_text = "title.."
 alignment = 1
 
@@ -169,17 +168,8 @@ theme_override_constants/margin_bottom = 10
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("2_l2s4e")
-text = "present {
-	chave que abrem portas
-	plataformas que caem por estarem velhas que vão estar boas no passado4
-	}
-
-future {
-	portas de ferro futuristicas que so abrem com indetificação (cartão,etc)
-	}
-past {
-	pontes normais de madeiras 
-	}"
+text = "
+"
 placeholder_text = "note..."
 wrap_mode = 1
 syntax_highlighter = SubResource("CodeHighlighter_dtqsk")
