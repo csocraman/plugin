@@ -9,7 +9,21 @@ var current_dir = ""
 @export var epositionbp : int = 1
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
+func _ready(): 
+	if "( )" in $Control/PanelContainer/MarginContainer/TextEdit.syntax_highlighter.color_regions:
+		view.get_popup().set_item_checked(1,true)
+	if "' '" in $Control/PanelContainer/MarginContainer/TextEdit.syntax_highlighter.color_regions or "\" \"" in $Control/PanelContainer/MarginContainer/TextEdit.syntax_highlighter.color_regions:
+		view.get_popup().set_item_checked(2,true)
+	if "[ ]" in $Control/PanelContainer/MarginContainer/TextEdit.syntax_highlighter.color_regions:
+		view.get_popup().set_item_checked(3,true)
+	if "{ }" in $Control/PanelContainer/MarginContainer/TextEdit.syntax_highlighter.color_regions:
+		view.get_popup().set_item_checked(4,true)
+	if $Control/PanelContainer/MarginContainer/TextEdit.draw_tabs == true:
+		view.get_popup().set_item_checked(6,true)
+	if $Control/PanelContainer/MarginContainer/TextEdit.draw_spaces == true:
+		view.get_popup().set_item_checked(7,true)
+	if $Control/PanelContainer/MarginContainer/TextEdit.syntax_highlighter.number_color != Color8(164,164,166):
+		view.get_popup().set_item_checked(9,true)
 	var file3 = FileAccess.open("res://addons/simplenote/log.txt",FileAccess.READ)
 	load_file(file3.get_line(),false)
 	view.get_popup().id_pressed.connect(viewf) 	

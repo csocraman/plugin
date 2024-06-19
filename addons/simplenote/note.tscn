@@ -17,10 +17,6 @@ number_color = Color(0.643137, 0.643137, 0.65098, 1)
 symbol_color = Color(0.643137, 0.643137, 0.65098, 1)
 function_color = Color(0.643137, 0.643137, 0.65098, 1)
 member_variable_color = Color(0.643137, 0.643137, 0.65098, 1)
-color_regions = {
-"( )": Color(0.737255, 1, 0, 1),
-"{ }": Color(0, 0.686275, 1, 1)
-}
 
 [node name="Simplenote" type="Control"]
 layout_mode = 3
