@@ -18,8 +18,7 @@ symbol_color = Color(0.643137, 0.643137, 0.65098, 1)
 function_color = Color(0.643137, 0.643137, 0.65098, 1)
 member_variable_color = Color(0.643137, 0.643137, 0.65098, 1)
 color_regions = {
-"\" \"": Color(1, 1, 0, 1),
-"' '": Color(1, 1, 0, 1),
+"( )": Color(0.737255, 1, 0, 1),
 "{ }": Color(0, 0.686275, 1, 1)
 }
 
@@ -149,6 +148,7 @@ layout_mode = 2
 [node name="LineEdit" type="LineEdit" parent="Control"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_l2s4e")
+text = "ideias pro jogo"
 placeholder_text = "title.."
 alignment = 1
 
@@ -169,9 +169,19 @@ theme_override_constants/margin_bottom = 10
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("2_l2s4e")
-text = "
-"
+text = "present {
+	chave que abrem portas
+	plataformas que caem por estarem velhas que vão estar boas no passado4
+	}
+
+future {
+	portas de ferro futuristicas que so abrem com indetificação (cartão,etc)
+	}
+past {
+	pontes normais de madeiras 
+	}"
 placeholder_text = "note..."
+wrap_mode = 1
 syntax_highlighter = SubResource("CodeHighlighter_dtqsk")
 
 [node name="SAVED" type="Label" parent="."]
