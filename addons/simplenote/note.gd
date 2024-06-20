@@ -2,14 +2,18 @@
 extends Control
 
 var current_dir = ""
+var hf = false
 
 @onready var view = $Control/HBoxContainer/MenuButton
 
 @export var eposition : int = 1
 @export var epositionbp : int = 1
 
+var focus_nodes : PackedStringArray = ["Control/LineEdit","Control/PanelContainer/MarginContainer/TextEdit"]
+var buttons : PackedStringArray = ["Control/HBoxContainer/Button","Control/HBoxContainer/Button2","Control/HBoxContainer/Button3"]
+
 # Called when the node enters the scene tree for the first time.
-func _ready(): 
+func _ready():
 	if "( )" in $Control/PanelContainer/MarginContainer/TextEdit.syntax_highlighter.color_regions:
 		view.get_popup().set_item_checked(1,true)
 	if "' '" in $Control/PanelContainer/MarginContainer/TextEdit.syntax_highlighter.color_regions or "\" \"" in $Control/PanelContainer/MarginContainer/TextEdit.syntax_highlighter.color_regions:
@@ -30,7 +34,18 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	$SAVED.position.x = $".".size.x - 20
-
+	for a in focus_nodes:
+		if get_node(a).has_focus():
+			for b in buttons:
+				get_node(b).set_process_shortcut_input(true)
+			hf = true
+			break
+		else:
+			hf = false
+				
+	if hf == false:
+		for b in buttons:
+			get_node(b).set_process_shortcut_input(false)
 func save(path, ctni : bool = true):
 	if FileAccess.file_exists(path) or path != "":
 		var save

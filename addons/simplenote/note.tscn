@@ -12,6 +12,22 @@ unicode = 115
 [sub_resource type="Shortcut" id="Shortcut_jui3j"]
 events = [SubResource("InputEventKey_e8xqj")]
 
+[sub_resource type="InputEventKey" id="InputEventKey_bacay"]
+device = -1
+ctrl_pressed = true
+keycode = 79
+
+[sub_resource type="Shortcut" id="Shortcut_tpahs"]
+events = [SubResource("InputEventKey_bacay")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_so0yq"]
+device = -1
+ctrl_pressed = true
+keycode = 78
+
+[sub_resource type="Shortcut" id="Shortcut_jl8by"]
+events = [SubResource("InputEventKey_so0yq")]
+
 [sub_resource type="CodeHighlighter" id="CodeHighlighter_dtqsk"]
 number_color = Color(0.643137, 0.643137, 0.65098, 1)
 symbol_color = Color(0.643137, 0.643137, 0.65098, 1)
@@ -55,6 +71,7 @@ layout_mode = 2
 [node name="Button2" type="Button" parent="Control/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+shortcut = SubResource("Shortcut_tpahs")
 text = "load"
 
 [node name="FileDialog" type="FileDialog" parent="Control/HBoxContainer/Button2"]
@@ -71,6 +88,7 @@ layout_mode = 2
 [node name="Button3" type="Button" parent="Control/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+shortcut = SubResource("Shortcut_jl8by")
 text = "new
 "
 
